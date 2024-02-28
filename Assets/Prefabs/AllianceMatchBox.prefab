@@ -72,6 +72,85 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &283879507996980824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662316072804916923}
+  - component: {fileID: 1130934072367877075}
+  - component: {fileID: 9135602911192552277}
+  m_Layer: 5
+  m_Name: TeamStats (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &662316072804916923
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283879507996980824}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3050612603450001443}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0000076294, y: -88}
+  m_SizeDelta: {x: 591.918, y: 55.7907}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1130934072367877075
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283879507996980824}
+  m_CullTransparentMesh: 1
+--- !u!114 &9135602911192552277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283879507996980824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 1bb0d9bc68c8f6248a3f823f7aa7c9ee, type: 3}
+    m_FontSize: 54
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 54
+    m_MaxSize: 183
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Travel Speed Score 2
 --- !u!1 &291623692207851900
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +186,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 713.72, y: 835.74}
+  m_SizeDelta: {x: 713.72, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4047482410603711838
 CanvasRenderer:
@@ -142,7 +221,7 @@ MonoBehaviour:
     m_FontSize: 58
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 40
+    m_MinSize: 55
     m_MaxSize: 68
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -150,8 +229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Ranking Explanation: Dis very good swfoweofn sd sdbwel rgis e\nGeneral
-    Strategy: ehey hey hey \nOther Comments:commentos very good muy beeeeeean"
+  m_Text: "Ranking Explanation: \nGeneral Strategy: \nOther Comments:"
 --- !u!1 &473075696894244211
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Data Quality: 2/5'
+  m_Text: 'Data Quality: 5/5'
 --- !u!1 &913004870732547309
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8901961, g: 0.5882353, b: 0.5333334, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -735,7 +813,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Travel Speed Score 1
+  m_Text: Travel Speed Score 2
 --- !u!1 &1683116701022632895
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,8 +1013,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6563076649009354321}
   m_HandleRect: {fileID: 6342759104379903342}
   m_Direction: 2
-  m_Value: 1.0000218
-  m_Size: 0.9966593
+  m_Value: 1.0000437
+  m_Size: 0.99665934
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1340,7 +1418,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Amplify Count: 2'
+  m_Text: 'Amplify Count: 5'
 --- !u!1 &4172695908761146595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,7 +1695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Playoffs
+  m_Text: Qualifications
 --- !u!1 &4783344071554791597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 13
 --- !u!1 &4990776477265367172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,7 +1928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fouls: 21'
+  m_Text: 'Fouls: 0'
 --- !u!1 &5192949311455767057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,7 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9764706, g: 0.9607843, b: 0.9490196, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1929,7 +2007,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Align Speed Score 3
+  m_Text: Align Speed Score 1
 --- !u!1 &5534803017379821638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +2066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8901961, g: 0.5882353, b: 0.5333334, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2172,7 +2250,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1318
+  m_Text: 8248
 --- !u!1 &6099466281090609682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,7 +2329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'High Notes: 1/10'
+  m_Text: 'High Notes: 2/4'
 --- !u!1 &6480801625434856366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,7 +2467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9764706, g: 0.9607843, b: 0.9490196, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2409,7 +2487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Travel Speed Score 3
+  m_Text: Travel Speed Score 2
 --- !u!1 &7472781194752854557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,7 +2566,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scouter Name: Ryan Zou'
+  m_Text: 'Scouter Name: Anonymous'
 --- !u!1 &7498845565145781168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8274932, g: 0.2709984, b: 0.32921967, a: 1}
+  m_Color: {r: 0.91764706, g: 0.27843133, b: 0.30954793, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2650,7 +2728,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bots in Harmony: Triple'
+  m_Text: 'Bots in Harmony: Double'
 --- !u!1 &7858581264431945170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,8 +2888,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Auto Center Notes: 2'
---- !u!1001 &500380752862376197
-PrefabInstance:
+--- !u!1 &8441568637067425945
+GameObject:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -3385,109 +3463,31 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
   m_PrefabInstance: {fileID: 5326967670645173033}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8974584546878905129
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6411670881375590858}
-    m_Modifications:
-    - target: {fileID: 3144313661203753044, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: text
-      value: Travel Speed Score
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8837527767989616720, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-      propertyPath: m_Name
-      value: Label Overlay
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
---- !u!224 &3764266536280564811 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5238105693240295266, guid: 4511b3ad37df89a4593a4cd50fa8f01c, type: 3}
-  m_PrefabInstance: {fileID: 8974584546878905129}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441568637067425945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 1bb0d9bc68c8f6248a3f823f7aa7c9ee, type: 3}
+    m_FontSize: 54
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 54
+    m_MaxSize: 183
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Avoidance Score 3

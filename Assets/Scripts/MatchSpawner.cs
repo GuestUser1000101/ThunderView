@@ -18,7 +18,7 @@ public class MatchSpawner : MonoBehaviour
     private void Start()
     {
         dataManager = DataManagerObject.GetComponent<DataManager>();
-            dataManager.updateTeamView.AddListener(SpawnMatches);
+        dataManager.updateTeamView.AddListener(SpawnMatches);
     }
 
     void SpawnMatches()
@@ -44,9 +44,9 @@ public class MatchSpawner : MonoBehaviour
             switch (match.AllianceColor)
             {
                 case "Red":
-                    newMatchCell.gameObject.GetComponent<RawImage>().color = new Color(1.0f, 0.35686274509f, 0.27058823529f, 1.0f); break;
+                    newMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.9294118f, 0.2431373f, 0.2196078f, 1.0f); break;
                 case "Blue":
-                    newMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.490196f, 0.8274509f, 1.0f, 1.0f); break;
+                    newMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.1960784f, 0.345098f, 0.9372549f, 1.0f); break;
             }
             newMatchCell.transform.GetChild(0).GetComponent<Text>().text = match.MatchNumber.ToString(); // MatchNumberText
             newMatchCell.transform.GetChild(1).GetComponent<Text>().text = match.MatchType; // MatchTypeText
@@ -68,12 +68,21 @@ public class MatchSpawner : MonoBehaviour
             newMatchCell.transform.GetChild(8).GetChild(0).GetComponent<Text>().text = (match.Onstage ? "Onstage" : match.Park ? "Park" : "None");
             newMatchCell.transform.GetChild(8).GetChild(1).gameObject.SetActive(match.Trap);
             newMatchCell.transform.GetChild(8).GetChild(2).gameObject.SetActive(match.Spotlight);
+
+            string comments = match.Comments;
+            if (comments == null || comments == "")
+            {
+                comments = "{No Comments}";
+            }
+            newMatchCell.transform.GetChild(9).GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = comments; //Comments
+
             if (SceneManager.GetActiveScene().name == "Rankings")
             {
-                newMatchCell.transform.localScale = new Vector3(0.58f, 0.58f, 0.58f);
-            } else
+                newMatchCell.transform.localScale = new Vector3(0.425f, 0.425f, 0.425f);
+            }
+            else
             {
-                newMatchCell.transform.localScale = new Vector3(1.0f,1.0f, 1.0f);
+                newMatchCell.transform.localScale = new Vector3(0.725f, 0.725f, 0.725f);
             }
             teamCount++;
 
@@ -82,18 +91,28 @@ public class MatchSpawner : MonoBehaviour
 
         }
 
-        foreach (var match in Directory.GetFiles(Application.persistentDataPath + $"/{PlayerPrefs.GetString("EventKey")}/subj") )
+        foreach (var match in Directory.GetFiles(Application.persistentDataPath + $"/{PlayerPrefs.GetString("EventKey")}/subj"))
         {
             DataManager.AllianceMatch allianceFileJson = JsonUtility.FromJson<DataManager.AllianceMatch>(File.ReadAllText(match));
-            if (allianceFileJson.Team1.ToString() == dataManager.fileJson.team || allianceFileJson.Team2.ToString() == dataManager.fileJson.team || allianceFileJson.Team3.ToString() == dataManager.fileJson.team) {
+            if (allianceFileJson.Team1.ToString() == dataManager.fileJson.team || allianceFileJson.Team2.ToString() == dataManager.fileJson.team || allianceFileJson.Team3.ToString() == dataManager.fileJson.team)
+            {
 
                 GameObject newAllianceMatchCell = allianceMatchPrefab;
+                /* Background Color for Alliance MatchCell*/
+                switch (allianceFileJson.AllianceColor)
+                {
+                    case "Red":
+                        newAllianceMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.9176471f, 0.2784313f, 0.3095479f, 1.0f); break;
+                    case "Blue":
+                        newAllianceMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.2800916f, 0.3204849f, 0.9182389f, 1.0f); break;
+                }
+
                 newAllianceMatchCell.transform.GetChild(0).GetComponent<Text>().text = allianceFileJson.MatchNumber.ToString();
                 newAllianceMatchCell.transform.GetChild(1).GetComponent<Text>().text = allianceFileJson.MatchType;
                 newAllianceMatchCell.transform.GetChild(2).GetComponent<Text>().text = $"Data Quality: {allianceFileJson.DataQuality.ToString()}/5";
                 newAllianceMatchCell.transform.GetChild(3).GetComponent<Text>().text = $"Scouter Name: {allianceFileJson.ScouterName}";
                 newAllianceMatchCell.transform.GetChild(4).gameObject.SetActive(allianceFileJson.Replay);
-                
+
                 // Team 1 Stats
                 newAllianceMatchCell.transform.GetChild(5).GetComponent<Text>().text = allianceFileJson.Team1.ToString();
                 newAllianceMatchCell.transform.GetChild(5).GetChild(0).GetComponent<Text>().text = $"Avoidance Score {allianceFileJson.Team1Avoid}";
@@ -132,19 +151,27 @@ public class MatchSpawner : MonoBehaviour
                 newAllianceMatchCell.transform.GetChild(10).GetComponent<Text>().text = allianceFileJson.WinMatch ? "WIN" : "LOSS";
 
                 //newAllianceMatchCell.transform.GetChild(9).GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = allianceFileJson.Comments;
-                newAllianceMatchCell.transform.localScale = new Vector3(0.77f, 0.77f, 0.77f);
+                if (SceneManager.GetActiveScene().name == "Rankings")
+                {
+                    newAllianceMatchCell.transform.localScale = new Vector3(0.45f, 0.45f, 0.45f);
+                }
+                else
+                {
+                    newAllianceMatchCell.transform.localScale = new Vector3(0.77f, 0.77f, 0.77f);
+                }
+
                 newAllianceMatchCell = Instantiate(newAllianceMatchCell, transform.parent);
                 allianceCount++;
             }
-            
+
         }
-        matchCount.GetComponent<Text>().text = $"Scouted Team Matches: {teamCount}\nScouted Alliance Matches: {allianceCount}";
+        matchCount.GetComponent<Text>().text = $"Scouted Team Matches: {teamCount} | Scouted Alliance Matches: {allianceCount}";
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
- 
+
 }

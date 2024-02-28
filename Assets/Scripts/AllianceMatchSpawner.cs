@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AllianceMatchSpawner : MonoBehaviour
@@ -24,15 +25,15 @@ public class AllianceMatchSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void SpawnMatches(string selective)
     {
         if (transform.parent.childCount > 1)
         {
 
-            for (int i = 1; i <  transform.parent.childCount; i++)
-            { 
+            for (int i = 1; i < transform.parent.childCount; i++)
+            {
                 Destroy(transform.parent.GetChild(i).gameObject);
             }
         }
@@ -42,9 +43,18 @@ public class AllianceMatchSpawner : MonoBehaviour
             DataManager.AllianceMatch matchJson = JsonUtility.FromJson<DataManager.AllianceMatch>(File.ReadAllText(match));
             if (selective != "") // Search function in alliance view
             {
-                if (!(matchJson.Team1.ToString() == selective || matchJson.Team2.ToString() == selective || matchJson.Team3.ToString() == selective)) {  continue; }
+                if (!(matchJson.Team1.ToString() == selective || matchJson.Team2.ToString() == selective || matchJson.Team3.ToString() == selective)) { continue; }
             }
             GameObject newMatchCell = matchPrefab;
+            /* Background Color for Alliance MatchCell*/
+            switch (matchJson.AllianceColor)
+            {
+                case "Red":
+                    newMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.9176471f, 0.2784313f, 0.3095479f, 1.0f); break;
+                case "Blue":
+                    newMatchCell.gameObject.GetComponent<RawImage>().color = new Color(0.2800916f, 0.3204849f, 0.9182389f, 1.0f); break;
+            }
+
             childOfCell(0).GetComponent<Text>().text = matchJson.MatchNumber.ToString();
             childOfCell(1).GetComponent<Text>().text = matchJson.MatchType;
             childOfCell(2).GetComponent<Text>().text = $"Data Quality: {matchJson.DataQuality.ToString()}/5";
@@ -87,10 +97,17 @@ public class AllianceMatchSpawner : MonoBehaviour
             childOfCell(8).GetChild(6).GetComponent<Text>().text = $"Fouls: {matchJson.Fouls}";
             childOfCell(9).GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = $"Ranking Explanation: {matchJson.RankingComments}\nGeneral Strategy: {matchJson.StratComments}\nOther Comments:{matchJson.OtherComments}";
             childOfCell(10).GetComponent<Text>().text = matchJson.WinMatch ? "WIN" : "LOSS";
+
+            if (SceneManager.GetActiveScene().name == "Rankings")
+            {
+                newMatchCell.transform.localScale = new Vector3(0.45f, 0.45f, 0.45f);
+            }
+            else
+            {
+                newMatchCell.transform.localScale = new Vector3(0.77f, 0.77f, 0.77f);
+            }
+
             newMatchCell = Instantiate(newMatchCell, transform.parent);
-
-
-
 
         }
     }
